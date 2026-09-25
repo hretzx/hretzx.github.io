@@ -141,10 +141,10 @@ PROJECTS = [
             "and payments."
         ],
         "images": [
-            ("images/projects/cinebook-1.jpg", 536),
-            ("images/projects/cinebook-2.jpg", 539),
-            ("images/projects/cinebook-3.jpg", 544),
-            ("images/projects/cinebook-4.jpg", 548),
+            ("images/projects/cinebook-1.png", 536),
+            ("images/projects/cinebook-2.png", 539),
+            ("images/projects/cinebook-3.png", 544),
+            ("images/projects/cinebook-4.png", 548),
         ],
     },
 ]
@@ -152,7 +152,7 @@ PROJECTS = [
 # The filter buttons above the project cards, in this order.
 PROJECT_FILTERS = [
     "JavaScript", "TypeScript", "api", "n8n",
-    "Tailwind CSS", "next.js", "react.js",
+    "Tailwind CSS", "next.js", "react.js","Django","Python","MySQL",
 ]
 
 # The floating green chips around "What I bring to the table".

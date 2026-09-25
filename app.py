@@ -142,15 +142,15 @@ CONTACTS = [
      "link": "mailto:hritvinarvekar@outlook.com"},
     {"label": "LinkedIn", "value": "hritvinarvekar",
      "link": "https://www.linkedin.com/in/hritvinarvekar/"},
-    {"label": "Website", "value": "https://aware-journey-936880.framer.app/",
-     "link": "https://aware-journey-936880.framer.app/"},
+    {"label": "Website", "value": "https://hretzx.github.io/",
+     "link": "https://hretzx.github.io/"},
     {"label": "Phone number", "value": "+91 83908 51961", "link": None},
 ]
 
 # About me page.
 ABOUT_INTRO = (
-    "Second-year Computer Engineering student at Vidyalankar Institute of "
-    "Technology with a CGPA of 9.81 and a perfect 10 SGPI in Semester 3. I "
+    "Third-year Computer Engineering student at Vidyalankar Institute of "
+    "Technology with a CGPA of 9.76 and a perfect 10 SGPI in Semester 3. I "
     "specialize in Data Structures, Algorithms, and building efficient backend "
     "systems with a focus on performance optimization and scalable architecture."
 )
@@ -179,6 +179,8 @@ SKILLS = [
     {"name": "Python", "icon": "python.svg", "group": "Languages"},
     {"name": "JavaScript", "icon": "javascript.svg", "group": "Languages"},
     {"name": "TypeScript", "icon": "typescript.svg", "group": "Languages"},
+    {"name": "Flask", "icon": "flask.svg", "group": "Tools & Frameworks"},
+    {"name": "Django", "icon": "django.svg", "group": "Tools & Frameworks"},
     {"name": "Node.js", "icon": "nodejs.svg", "group": "Tools & Frameworks"},
     {"name": "Express.js", "icon": "express.svg", "group": "Tools & Frameworks"},
     {"name": "React", "icon": "react.svg", "group": "Tools & Frameworks"},

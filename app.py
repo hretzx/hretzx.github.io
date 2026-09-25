@@ -112,6 +112,41 @@ PROJECTS = [
             ("images/projects/shoresafe-4.jpg", 548),
         ],
     },
+
+    {
+        "slug": "cinebook",
+        "name": "CineBook",
+        "summary": (
+            "CineBook is a full-stack movie ticket booking platform "
+            "developed using Django and MySQL. It provides secure, "
+            "session-based authentication with bcrypt password hashing "
+            "and CSRF protection while supporting movie, theatre, show, "
+            "seat, booking, and payment workflows."
+        ),
+        "tags": ["Python", "Django", "MySQL", "bcrypt"],
+        "cover": "images/projects/cinebook-cover.png",
+        "client": "CineBook",
+        "industry": "Entertainment, Ticketing",
+        "timeline": "2026",
+        "role": "Full-Stack Developer",
+        "about": [
+            "CineBook is a full-stack movie ticket booking platform built "
+            "with Django and MySQL, allowing users to browse movies, "
+            "select shows and seats, complete bookings, and view their "
+            "booking and payment history.",
+            "I developed the backend and database architecture, implementing "
+            "bcrypt-hashed session-based authentication, CSRF protection, "
+            "real-time seat availability, multi-seat booking, and relational "
+            "MySQL tables for movies, theatres, shows, seats, bookings, "
+            "and payments."
+        ],
+        "images": [
+            ("images/projects/cinebook-1.jpg", 536),
+            ("images/projects/cinebook-2.jpg", 539),
+            ("images/projects/cinebook-3.jpg", 544),
+            ("images/projects/cinebook-4.jpg", 548),
+        ],
+    },
 ]
 
 # The filter buttons above the project cards, in this order.

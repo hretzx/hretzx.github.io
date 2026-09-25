@@ -1,0 +1,25 @@
+{# The filter buttons and the project cards. Used on the home page and on /works. #}
+
+<div class="filters" data-filter-group="projects">
+  <button class="filter is-active" data-filter="all">All</button>
+  {% for tag in filters %}
+    <button class="filter" data-filter="{{ tag }}">{{ tag }}</button>
+  {% endfor %}
+</div>
+
+<div class="cards">
+  {% for project in projects %}
+    {# data-tags lets the filter buttons know which cards to show #}
+    <a class="card reveal" href="{{ url_for('project', slug=project.slug) }}"
+       data-tags="{{ project.tags | join('|') }}">
+      <div class="card-image">
+        <img src="{{ url_for('static', filename=project.cover) }}" alt="{{ project.name }}">
+      </div>
+      <h3 class="card-title">{{ project.name }}</h3>
+      <p class="card-text">{{ project.summary }}</p>
+      <div class="tags">
+        {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+    </a>
+  {% endfor %}
+</div>

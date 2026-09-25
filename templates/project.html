@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block content %}
+
+  <section class="project page-top">
+    <h1 class="project-title">{{ project.name }}</h1>
+    <p class="subheading muted">{{ project.summary }}</p>
+    <div class="tags tags--center">
+      {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+
+    <img class="project-cover" src="{{ url_for('static', filename=project.cover) }}" alt="{{ project.name }}">
+
+    <article class="project-body">
+      <h2>Project Overview</h2>
+      <p>
+        <strong>Client:</strong> {{ project.client }}<br>
+        <strong>Industry:</strong> {{ project.industry }}<br>
+        <strong>Timeline:</strong> {{ project.timeline }}<br>
+        <strong>My Role:</strong> {{ project.role }}
+      </p>
+      {% for paragraph in project.about %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
+
+      {% for image, width in project.images %}
+        <img src="{{ url_for('static', filename=image) }}" width="{{ width }}" alt="">
+      {% endfor %}
+    </article>
+
+    <nav class="project-nav">
+      <a href="{{ url_for('works') }}">← Back to All Works</a>
+      {% if next_project %}
+        <a href="{{ url_for('project', slug=next_project.slug) }}">{{ next_project.name }} →</a>
+      {% endif %}
+    </nav>
+  </section>
+
+  {% include "_contact.html" %}
+
+{% endblock %}

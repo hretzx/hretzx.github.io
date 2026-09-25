@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <!-- 1. Hero: the big title with four tilted screenshots around it -->
+  <section class="hero">
+    <img class="hero-shot hero-shot--phones" src="{{ url_for('static', filename='images/hero-phones.webp') }}" alt="">
+    <img class="hero-shot hero-shot--map" src="{{ url_for('static', filename='images/hero-map.webp') }}" alt="">
+    <img class="hero-shot hero-shot--dashboard" src="{{ url_for('static', filename='images/hero-dashboard.webp') }}" alt="">
+    <img class="hero-shot hero-shot--laptop" src="{{ url_for('static', filename='images/hero-laptop.webp') }}" alt="">
+
+    <h1 class="title">Software &amp;<br>Systems Developer</h1>
+    <p class="hero-text">startups can count on!</p>
+    <a class="button" href="mailto:hritvinarvekar@outlook.com">
+      Chat With Me
+      <img src="{{ url_for('static', filename='icons/arrow.svg') }}" alt="">
+    </a>
+  </section>
+
+  <!-- 2. Projects -->
+  <section class="projects">
+    <h2 class="heading">Things I've built</h2>
+    <p class="small-text">Projects where I explore systems, performance, and new ideas.</p>
+    {% include "_projects.html" %}
+  </section>
+
+  <!-- 3. "What I bring to the table", with green chips floating around it -->
+  <section class="strengths">
+    <img class="illustration" src="{{ url_for('static', filename='images/ufo.svg') }}" alt="">
+    <div class="strengths-text">
+      <h2 class="heading">What I bring<br class="desktop-only"> to the table</h2>
+      <p class="subheading">Engineering digital systems with an emphasis on efficiency, strong algorithms, and structured analytical thinking.</p>
+
+      <ul class="chips">
+        {% for chip in strengths %}
+          {# --x, --y and --turn are read by .chip in style.css #}
+          <li class="chip" style="--x: {{ chip.x }}px; --y: {{ chip.y }}px; --turn: {{ chip.turn }}deg">{{ chip.text }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Contact -->
+  {% include "_contact.html" %}
+
+{% endblock %}

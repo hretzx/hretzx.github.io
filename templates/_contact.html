@@ -1,0 +1,20 @@
+{# "Ready to build something amazing?" and the contact rows. Used on every page except About. #}
+
+<section class="contact reveal" id="contact">
+  <img class="illustration" src="{{ url_for('static', filename='images/typewriter.svg') }}" alt="">
+  <h2 class="heading">Ready to build<br>something amazing?</h2>
+  <p class="subheading muted">I'd love to connect with you!</p>
+
+  <div class="contact-rows">
+    {% for row in contacts %}
+      {% if row.link %}
+        <a class="contact-row" href="{{ row.link }}"{% if row.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}>
+      {% else %}
+        <div class="contact-row">
+      {% endif %}
+          <span>{{ row.label }}</span>
+          <span class="contact-value">{{ row.value }}</span>
+      {% if row.link %}</a>{% else %}</div>{% endif %}
+    {% endfor %}
+  </div>
+</section>

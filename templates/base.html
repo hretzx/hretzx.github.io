@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# A page can set its own tab title by filling the "title" block; the default is her name. #}
+  <title>{% block title %}Hritvi Prasad Narvekar{% endblock %}</title>
+  <meta name="description" content="Software &amp; systems student building projects around full-stack development, algorithms, and performance-driven engineering.">
+
+  <!-- The little picture in the browser tab, and the one phones use for home-screen shortcuts -->
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.jpg') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+
+  <!-- The preview card shown when the link is shared (WhatsApp, LinkedIn, X...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hritvi Prasad Narvekar">
+  <meta property="og:description" content="Software &amp; systems student building projects around full-stack development, algorithms, and performance-driven engineering.">
+  <meta property="og:image" content="{{ config.SITE_URL or request.url_root }}static/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: DM Sans for text, Libre Baskerville (italic) for the big pink headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav-link" href="{{ url_for('works') }}">Works</a>
+    <a class="logo" href="{{ url_for('home') }}">Hritvi<br>Narvekar</a>
+    <a class="nav-link" href="{{ url_for('about') }}">About me</a>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="{{ url_for('home') }}">Hritvi<br>Narvekar</a>
+    <p>© 2026 Mumbai, Maharashtra</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

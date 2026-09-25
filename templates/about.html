@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <section class="about page-top">
+
+    <div class="about-row">
+      <div class="about-left">
+        <p class="about-intro">{{ intro }}</p>
+
+        <div class="highlights">
+          {% for item in highlights %}
+            <div class="highlight">
+              <span class="highlight-dot"></span>
+              <p>{{ item }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <img class="about-photo" src="{{ url_for('static', filename='images/about-photo.png') }}" alt="Hritvi Narvekar">
+    </div>
+
+    <div class="dots"><span></span><span></span></div>
+
+    <div class="stats">
+      {% for stat in stats %}
+        <div class="stat">
+          {# main.js counts the number up from 0 when the page opens #}
+          <span class="stat-number"><span data-count="{{ stat.number }}">{{ stat.number }}</span>{{ stat.suffix }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="dots"><span></span><span></span></div>
+
+    <div class="skills">
+      <h2 class="skills-title">Languages &amp; Tools</h2>
+
+      <div class="skill-filters" data-filter-group="skills">
+        <button class="skill-filter is-active" data-filter="all">All</button>
+        {% for group in skill_groups %}
+          <button class="skill-filter" data-filter="{{ group }}">{{ group }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="skill-list">
+        {% for skill in skills %}
+          <span class="skill" data-tags="{{ skill.group }}">
+            <img src="{{ url_for('static', filename='icons/' + skill.icon) }}" alt="">
+            {{ skill.name }}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}
